@@ -1,7 +1,6 @@
 from setuptools import setup, find_packages
 from subprocess import call
 
-call("mvn install", shell=True)
 
 setup(name='java_pip_test',
       version='0.1',
