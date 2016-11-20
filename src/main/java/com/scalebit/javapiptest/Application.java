@@ -1,26 +1,14 @@
 package com.scalebit.javapiptest;
 
-import org.springframework.boot.Banner;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.ConfigurableApplicationContext;
-
-
-@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
-
-        ConfigurableApplicationContext context = new SpringApplicationBuilder()
-                .sources(Application.class)
-                .bannerMode(Banner.Mode.CONSOLE)
-                .run(args);
-
-        Application app = context.getBean(Application.class);
-        app.start();
+        if (args.length < 1) {
+            System.out.println("need a message as the first argument");
+            System.exit(1);
+        }
+        String message = args[0];
+        System.out.println(message);
     }
 
-    private void start() {
-        System.out.println("Hello World!");
-    }
 }
