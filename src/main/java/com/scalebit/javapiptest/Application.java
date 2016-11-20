@@ -9,6 +9,7 @@ public class Application {
         }
         String message = args[0];
         System.out.println(message);
+        System.out.println("currently executing in: " + System.getProperty("user.dir"));
     }
 
 }
